@@ -59,3 +59,13 @@ tagList.addEventListener("click", (event) => {
         tagList.removeChild(removedTag);
     }
 })
+
+const avaibleTags = [ "Front-end", "Programação", "Data Science", "Full-stack", "HTML", "CSS", "JavaScript" ];
+
+async function verifyAvaibleTags (tagText) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(avaibleTags.includes(tagText));
+        }, 1000)
+    })
+}
