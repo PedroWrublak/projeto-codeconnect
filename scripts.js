@@ -44,11 +44,13 @@ inputTags.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
         event.preventDefault();
         const tagTexto = inputTags.value.trim();
-        if (tagTexto !== "") {
+        if (tagTexto !== "" && avaibleTags.includes(tagTexto)) {
             const newTag = document.createElement("li");
             newTag.innerHTML = `<p>${tagTexto}</p> <img src="./img/close-black.svg" class="remove-tag">`
             tagList.appendChild(newTag);
             inputTags.value = "";
+        } else {
+            alert('Tag inválida');
         }
     }
 })
