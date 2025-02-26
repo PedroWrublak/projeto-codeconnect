@@ -77,4 +77,19 @@ inputTags.addEventListener("keypress", async (event) => {
                 alert('Erro ao verificar a existência da tag. Verfique o console.')
             }
     }
-}})
+}
+})
+
+const publishBtn = document.querySelector(".botao-publicar");
+
+publishBtn.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    const projectName = document.getElementById("nome").value;
+    const projectDescripton = document.getElementById("descricao").value;
+    const projectTags = Array.from(tagList.querySelectorAll("p")).map((tag) => tag.textContent);
+
+    console.log(projectName);
+    console.log(projectDescripton);
+    console.log(projectTags);
+})
