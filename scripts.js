@@ -93,3 +93,18 @@ publishBtn.addEventListener("click", async (event) => {
     console.log(projectDescripton);
     console.log(projectTags);
 })
+
+async function publishProject (projectName, projectDescripton, projectTags) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const itWorked = Math.random() > 0.5; // Fator para saber se deu certo ou não, baseado na sorte (não faz parte do código)
+
+            if (itWorked) {
+                resolve("Projeto publicado com sucesso.")
+            } else {
+                reject("Erro ao publicar o projeto.")
+            }
+
+        }, 2000)
+    })
+}
