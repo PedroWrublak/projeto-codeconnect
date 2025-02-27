@@ -92,6 +92,15 @@ publishBtn.addEventListener("click", async (event) => {
     console.log(projectName);
     console.log(projectDescripton);
     console.log(projectTags);
+
+    try {
+        const mensage = await publishProject (projectName, projectDescripton, projectTags);
+        console.log(mensage);
+        alert(mensage)
+    } catch (error) {
+        console.error(error);
+        alert(error);
+    }
 })
 
 async function publishProject (projectName, projectDescripton, projectTags) {
