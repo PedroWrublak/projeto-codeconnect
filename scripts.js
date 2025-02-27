@@ -82,27 +82,6 @@ inputTags.addEventListener("keypress", async (event) => {
 
 const publishBtn = document.querySelector(".botao-publicar");
 
-publishBtn.addEventListener("click", async (event) => {
-    event.preventDefault();
-
-    const projectName = document.getElementById("nome").value;
-    const projectDescripton = document.getElementById("descricao").value;
-    const projectTags = Array.from(tagList.querySelectorAll("p")).map((tag) => tag.textContent);
-
-    console.log(projectName);
-    console.log(projectDescripton);
-    console.log(projectTags);
-
-    try {
-        const mensage = await publishProject (projectName, projectDescripton, projectTags);
-        console.log(mensage);
-        alert(mensage)
-    } catch (error) {
-        console.error(error);
-        alert(error);
-    }
-})
-
 async function publishProject (projectName, projectDescripton, projectTags) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -117,3 +96,20 @@ async function publishProject (projectName, projectDescripton, projectTags) {
         }, 2000)
     })
 }
+
+publishBtn.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    const projectName = document.getElementById("nome").value;
+    const projectDescripton = document.getElementById("descricao").value;
+    const projectTags = Array.from(tagList.querySelectorAll("p")).map((tag) => tag.textContent);
+
+    try {
+        const mensage = await publishProject (projectName, projectDescripton, projectTags);
+        console.log(mensage);
+        alert(mensage)
+    } catch (error) {
+        console.error(error);
+        alert(error);
+    }
+})
