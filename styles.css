@@ -148,6 +148,12 @@
         position: relative;
     }
 
+    .botao-descartar:hover {
+        background-color: var(--primary-color);
+        border: 1px solid var(--itens-background);
+        color: #171D1F;
+    }
+
     .botao-descartar::after {
         content: "";
         background-image: url("./img/trash.svg");
@@ -166,6 +172,10 @@
         background-color: var(--primary-color);
         color: var(--background-color);
         position: relative;
+    }
+
+    .botao-publicar:hover {
+        background-color: #171D1F;
     }
 
     .botao-publicar::after {

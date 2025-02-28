@@ -113,3 +113,17 @@ publishBtn.addEventListener("click", async (event) => {
         alert(error);
     }
 })
+
+const descartBtn = document.querySelector(".botao-descartar");
+
+descartBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const form = document.querySelector("form");
+    form.reset();
+
+    imagemPrincipal.src = "./img/imagem1.png";
+    nomeDaImagem.textContent = "image_projeto.pnj"
+
+    tagList.innerHTML = "";
+})
